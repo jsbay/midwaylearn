@@ -1,5 +1,3 @@
-import { hasUncaughtExceptionCaptureCallback } from 'process';
-
 /**
  * @description User-Service parameters
  */
