@@ -1,9 +1,9 @@
 import { Provide } from '@midwayjs/decorator';
-import { IUserOptions } from '../interface';
+import { IUserOptions, IUser } from '../interface';
 
 @Provide()
 export class UserService {
-  async getUser(options: IUserOptions) {
+  async getUser(options: IUserOptions): Promise<IUser> {
     return {
       uid: options.uid,
       username: 'mockedName',

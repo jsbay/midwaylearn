@@ -5,9 +5,17 @@ export interface IUserOptions {
   uid: number;
 }
 
-export type IResonesCode = 20000 | -1 | 50008 | 50009;
-export interface IResponse {
-  data: Record<string, unknown>;
+export interface IUser {
+  uid: number;
+  username: string;
+  phone: string;
+  email: string;
+}
+export interface IList<T> {
+  list?: Array<T>;
+}
+export interface IResponse<T> {
+  data: T;
   errMsg: string;
-  code: IResonesCode;
+  code: 20000 | -1 | 50008 | 50009;
 }

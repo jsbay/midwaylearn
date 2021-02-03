@@ -5,7 +5,7 @@ export type DefaultConfig = PowerPartial<EggAppConfig>;
 export default (appInfo: EggAppInfo): DefaultConfig => {
   const config = {} as DefaultConfig;
   config.mssql = {
-    host: 'local',
+    host: 'prod',
   };
   return config;
 };

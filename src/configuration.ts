@@ -1,4 +1,5 @@
 import { App, Configuration } from '@midwayjs/decorator';
+// eslint-disable-next-line node/no-extraneous-import
 import { ILifeCycle } from '@midwayjs/core';
 import { Application } from 'egg';
 
