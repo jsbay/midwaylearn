@@ -10,11 +10,11 @@ import {
 } from '@midwayjs/decorator';
 import { Context } from 'egg';
 
-import { UserService } from '../service/user';
-import { IResponse, IList, IUser } from '../interface';
+import { UserService } from '../../service/user';
+import { IResponse, IList, IUser } from '../../interface';
 interface resoponse extends IList<IUser>, IUser {}
 @Provide()
-@Controller('/api', { middleware: ['reportMiddleware'] })
+@Controller('/api/v1', { middleware: ['reportMiddleware'] })
 export class APIController {
   @Inject()
   ctx: Context;
@@ -26,6 +26,7 @@ export class APIController {
   @Get('/get_user')
   @SetHeader('x-bbb', '123')
   @SetHeader('x-abc', '123')
+  @SetHeader('Set-Cookie', 'username=bay; Path=/;')
   @HttpCode(201)
   async getUser(@Query() uid: number): Promise<IResponse<resoponse>> {
     console.log(this.ctx.ip);
@@ -52,5 +53,12 @@ export class APIController {
     };
 
     return r;
+  }
+
+  @Post('/my')
+  async my(): Promise<unknown> {
+    return {
+      name: '1234',
+    };
   }
 }

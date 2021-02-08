@@ -9,7 +9,7 @@ export default (appInfo: EggAppInfo): DefaultConfig => {
   config.keys = appInfo.name + '_1611909042040_5098';
 
   // add your config here
-  config.middleware = [];
+  config.middleware = ['authenticatorMiddleware'];
 
   config.security = {
     csrf: {
@@ -18,10 +18,20 @@ export default (appInfo: EggAppInfo): DefaultConfig => {
   };
 
   config.midwayFeature = {
-    // true 代表使用 midway logger
-    // false 或者为空代表使用 egg-logger
-    replaceEggLogger: true,
+    replaceEggLogger: true, // true 代表使用 midway logger  false 或者为空代表使用 egg-logger
   };
 
+  config.session = {
+    key: 'AIDM',
+    maxAge: 24 * 3600 * 1000 * 30, // 30 天
+    httpOnly: true,
+    encrypt: true,
+    renew: true,
+  };
+
+  config.passportLocal = {
+    // usernameField: 'username',
+    // passwordField: 'password',
+  };
   return config;
 };

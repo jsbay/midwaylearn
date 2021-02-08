@@ -5,7 +5,7 @@ export type DefaultConfig = PowerPartial<EggAppConfig>;
 export default (appInfo: EggAppInfo): DefaultConfig => {
   const config = <DefaultConfig>{};
   config.mssql = {
-    host: 'prod',
+    host: 'pre',
   };
   config.redis = {
     client: {
@@ -15,8 +15,8 @@ export default (appInfo: EggAppInfo): DefaultConfig => {
       db: 0,
     },
   };
-  config.sessionRedis = {
-    name: appInfo.name,
-  };
+  // config.sessionRedis = {
+  //   name: appInfo.name,
+  // };
   return config;
 };
