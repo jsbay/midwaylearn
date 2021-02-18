@@ -6,13 +6,25 @@ export type DefaultConfig = PowerPartial<EggAppConfig>;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (appInfo: EggAppInfo): DefaultConfig => {
   const config = <DefaultConfig>{};
+  // config.orm = <ConnectionOptions>{
+  //   type: 'mssql',
+  //   server: '192.168.49.20',
+  //   port: 1433,
+  //   user: 'ATMP01',
+  //   password: '10AD7A7a',
+  //   database: 'ATMP',
+  //   connectionTimeout: 120000,
+  //   requestTimeout: 120000,
+  //   logging: true,
+  // };
   config.orm = <ConnectionOptions>{
-    type: 'mssql',
-    server: '192.168.49.20',
-    port: 1433,
-    user: 'ATMP01',
-    password: '10AD7A7a',
-    database: 'ATMP',
+    type: 'mysql',
+    host: '112.126.58.34',
+    port: 3306,
+    user: 'root',
+    password: 'Bai930706..',
+    database: 'bay',
+    entities: ['../entities/*'],
     connectionTimeout: 120000,
     requestTimeout: 120000,
     logging: true,
