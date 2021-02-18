@@ -15,6 +15,7 @@
     "egg-scripts": "^2.10.0",
     "egg-session-redis": "^2.1.0",
     "mssql": "^6.3.1",
+    "mysql": "^2.18.1",
     "swagger-ui-dist": "^3.42.0"
   },
   "devDependencies": {
