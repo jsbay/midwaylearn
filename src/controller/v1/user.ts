@@ -14,7 +14,7 @@ import { UserLoginDTOV1 } from '../../dto/v1/user';
 
 @Provide()
 @Controller('/api/v1')
-export class UserControllerV1 extends AIDMController {
+export class UserController extends AIDMController {
   @Inject()
   ctx: Context;
 

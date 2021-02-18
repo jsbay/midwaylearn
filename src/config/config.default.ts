@@ -1,4 +1,5 @@
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
+import { ConnectionOptions } from 'typeorm';
 
 export type DefaultConfig = PowerPartial<EggAppConfig>;
 
@@ -9,7 +10,7 @@ export default (appInfo: EggAppInfo): DefaultConfig => {
   config.keys = appInfo.name + '_1611909042040_5098';
 
   // add your config here
-  config.middleware = ['authenticatorMiddleware'];
+  // config.middleware = ['authenticatorMiddleware'];
 
   config.security = {
     csrf: {
@@ -32,6 +33,18 @@ export default (appInfo: EggAppInfo): DefaultConfig => {
   config.passportLocal = {
     // usernameField: 'username',
     // passwordField: 'password',
+  };
+
+  config.orm = <ConnectionOptions>{
+    type: 'mssql',
+    server: '192.168.49.20',
+    port: 1433,
+    user: 'ATMP01',
+    password: '10AD7A7a',
+    database: 'ATMP',
+    connectionTimeout: 120000,
+    requestTimeout: 120000,
+    logging: true,
   };
   return config;
 };
