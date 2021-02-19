@@ -34,5 +34,16 @@ export default (appInfo: EggAppInfo): DefaultConfig => {
     // passwordField: 'password',
   };
 
+  config.onerror = {
+    all(err, ctx) {
+      ctx.set('content-type', 'application/json; charset=utf-8');
+      ctx.body = JSON.stringify({
+        code: -1,
+        data: {},
+        msg: err.message,
+      });
+    },
+  };
+
   return config;
 };
