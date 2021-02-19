@@ -11,7 +11,7 @@ import { getConnection } from 'typeorm';
     '@midwayjs/orm',
     {
       component: swagger,
-      enabledEnvironment: ['local', 'pre'],
+      enabledEnvironment: ['local', 'pre', 'prod'],
     },
   ],
   importConfigs: ['./config'],
