@@ -1,5 +1,4 @@
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
-import { ConnectionOptions } from 'typeorm';
 
 export type DefaultConfig = PowerPartial<EggAppConfig>;
 
@@ -35,16 +34,5 @@ export default (appInfo: EggAppInfo): DefaultConfig => {
     // passwordField: 'password',
   };
 
-  config.orm = <ConnectionOptions>{
-    type: 'mysql',
-    host: '112.126.58.34',
-    port: 3306,
-    user: 'root',
-    password: 'Bai930706..',
-    database: 'bay',
-    connectionTimeout: 120000,
-    requestTimeout: 120000,
-    logging: true,
-  };
   return config;
 };

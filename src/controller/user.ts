@@ -9,11 +9,11 @@ import {
   Validate,
 } from '@midwayjs/decorator';
 import { Context } from 'egg';
-import { AIDMController, IResponse } from '../controller';
-import { UserLoginDTOV1 } from '../../dto/v1/user';
+import { AIDMController, IResponse } from './controller';
+import { UserLoginDTO } from '../dto/user';
 
 @Provide()
-@Controller('/api/v1')
+@Controller('/api')
 export class UserController extends AIDMController {
   @Inject()
   ctx: Context;

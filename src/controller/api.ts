@@ -10,11 +10,11 @@ import {
 } from '@midwayjs/decorator';
 import { Context } from 'egg';
 
-import { UserService } from '../../service/user';
-import { IResponse, IList, IUser } from '../../interface';
+import { UserService } from '../service/user';
+import { IResponse, IList, IUser } from '../interface';
 interface resoponse extends IList<IUser>, IUser {}
 @Provide()
-@Controller('/api/v1', { middleware: ['reportMiddleware'] })
+@Controller('/api', { middleware: ['reportMiddleware'] })
 export class APIController {
   @Inject()
   ctx: Context;

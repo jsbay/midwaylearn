@@ -10,7 +10,7 @@ export default (appInfo: EggAppInfo): DefaultConfig => {
   //   type: 'mssql',
   //   server: '192.168.49.20',
   //   port: 1433,
-  //   user: 'ATMP01',
+  //   username: 'ATMP01',
   //   password: '10AD7A7a',
   //   database: 'ATMP',
   //   connectionTimeout: 120000,
@@ -21,12 +21,14 @@ export default (appInfo: EggAppInfo): DefaultConfig => {
     type: 'mysql',
     host: '112.126.58.34',
     port: 3306,
-    user: 'root',
+    username: 'root',
     password: 'Bai930706..',
     database: 'bay',
     entities: ['../entities/*'],
     connectionTimeout: 120000,
     requestTimeout: 120000,
+    // 是否需要在每次应用启动后自动对数据库的视图 Schema 进行自动的 Migration
+    // synchronize: true,
     logging: true,
   };
   config.redis = {

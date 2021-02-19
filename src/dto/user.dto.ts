@@ -1,7 +1,7 @@
 'use strict';
 import { Rule, RuleType } from '@midwayjs/decorator';
 
-export class UserLoginDTOV1 {
+export class UserLoginDTO {
   @Rule(RuleType.string().required().error(new Error("'username' 是必填的")))
   username: string;
 
