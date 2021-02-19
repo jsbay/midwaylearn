@@ -1,6 +1,6 @@
 'use strict';
 import { Provide, Aspect, IMethodAspect, JoinPoint } from '@midwayjs/decorator';
-import { UserController } from '../controller/v1/user';
+import { UserController } from '../controller/user';
 import { AIDMController } from '../controller/controller';
 
 @Provide()

@@ -10,7 +10,7 @@ import {
 } from '@midwayjs/decorator';
 import { Context } from 'egg';
 import { AIDMController, IResponse } from './controller';
-import { UserLoginDTO } from '../dto/user';
+import { UserLoginDTO } from '../dto/User.dto';
 
 @Provide()
 @Controller('/api')
@@ -20,7 +20,7 @@ export class UserController extends AIDMController {
 
   @Post('/login')
   @Validate()
-  async Login(@Body(ALL) user: UserLoginDTOV1): Promise<IResponse> {
+  async Login(@Body(ALL) user: UserLoginDTO): Promise<IResponse> {
     await this.ctx.login(user);
     return this.ok({ data: { user } });
   }

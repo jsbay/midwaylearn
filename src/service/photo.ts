@@ -3,13 +3,13 @@ import { InjectEntityModel } from '@midwayjs/orm';
 import { Photo } from '../entities/Photo.entity';
 import { Repository } from 'typeorm';
 
-@Provide('v1')
+@Provide()
 export class PhotoService {
   @InjectEntityModel(Photo)
   photoModel: Repository<Photo>;
 
   // save
-  async savePhoto(): Promise<number> {
+  async save(): Promise<number> {
     // create a entity object
     const photo = new Photo();
     photo.name = 'Me and Bears';
