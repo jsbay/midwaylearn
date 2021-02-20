@@ -29,7 +29,7 @@ export default (appInfo: EggAppInfo): DefaultConfig => {
     requestTimeout: 120000,
     // 是否需要在每次应用启动后自动对数据库的视图 Schema 进行自动的 Migration
     synchronize: true,
-    logging: true,
+    // logging: true,
   };
   config.redis = {
     client: {
