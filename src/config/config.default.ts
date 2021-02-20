@@ -45,5 +45,13 @@ export default (appInfo: EggAppInfo): DefaultConfig => {
     },
   };
 
+  config.swagger = {
+    title: '城市英雄',
+    description: `
+      req.param 获取 pathinfo 中参数, 例如 /api/users/{id}
+      req.query 获取查询参数, 例如 /api/users?name=wwx
+      req.body 获取 form 提交参数, 例如 post 请求
+    `,
+  };
   return config;
 };
